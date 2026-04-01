@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Golden Taste</title>
+
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3075/3075977.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #111;
+    color: white;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: rgba(0,0,0,0.9);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    color: gold;
+    font-weight: 700;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: gold;
+}
+
+/* HERO (НОВАЯ ОБЛОЖКА) */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1498654896293-37aacf113fd9') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 60px;
+}
+
+/* BUTTON */
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    background: gold;
+    color: black;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: orange;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background: #222;
+    margin: 10% auto;
+    padding: 30px;
+    width: 300px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.modal input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    color: red;
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 50px;
+    text-align: center;
+}
+
+/* RESTAURANT PHOTO */
+.restaurant-img {
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+/* MENU */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: #222;
+    width: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 10px;
+}
+
+/* ABOUT */
+.about {
+    background: linear-gradient(135deg, #222, #333);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.about h2 {
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* CONTACT */
+.contact p {
+    margin: 10px 0;
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    padding: 20px;
+    text-align: center;
+    color: gray;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🍽 Golden Taste</div>
+    <nav>
+        <a href="#">Главная</a>
+        <a href="#restaurant">Ресторан</a>
+        <a href="#menu">Меню</a>
+        <a href="#about">О нас</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h1>Golden Taste</h1>
+        <p>Настоящее удовольствие от еды</p>
+        <button class="btn" onclick="openModal()">Забронировать стол</button>
+    </div>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">✖</span>
+        <h2>Бронирование</h2>
+        <input type="text" placeholder="Ваше имя">
+        <input type="tel" placeholder="Телефон">
+        <input type="date">
+        <button class="btn">Отправить</button>
+    </div>
+</div>
+
+<!-- PHOTO --->
+<section id="restaurant">
+    <h2>Наш ресторан</h2>
+    <img class="restaurant-img" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4">
+</section>
+
+<!-- MENU -->
+<section id="menu">
+<h2>Меню</h2>
+<br>
+
+<div class="menu">
+
+<!-- БЛЮДА -->
+<div class="card"><img src="https://fb.ru/misc/i/gallery/2/3751195.jpg"><h3>Пицца</h3></div>
+<div class="card"><img src="https://s.alicdn.com/@sc02/kf/Aa82c879dcab04a25943d5b7875f5c3dbR.jpg"><h3>Стейк</h3></div>
+<div class="card"><img src="https://kuku-muku.ru/wp-content/uploads/2022/03/0v5a0306.jpg"><h3>Салат Цезарь</h3></div>
+<div class="card"><img src="https://samchef.ru/assets/i/ai/4/4/8/i/3035454.jpg"><h3>Паста Карбонара</h3></div>
+<div class="card"><img src="https://static.tildacdn.com/tild3338-3032-4839-b934-356331613338/sushi-set-hot-rolls-.jpg"><h3>Суши</h3></div>
+<div class="card"><img src="https://opis-cdn.tinkoffjournal.ru/mercury/12-burger-spb.jpg"><h3>Бургер</h3></div>
+<div class="card"><img src="https://amiel.club/uploads/posts/2022-03/1647525646_5-amiel-club-p-kuritsa-gril-kartinki-5.jpg"><h3>Курица гриль</h3></div>
+<div class="card"><img src="https://i.artfile.ru/2560x1709_1695771_[www.ArtFile.ru].jpg"><h3>Рыба</h3></div>
+<div class="card"><img src="https://n1s1.hsmedia.ru/37/43/92/3743925a8c5168d4cee0206badda5bc1/1200x894_0xac120003_19645727351641832209.jpeg"><h3>Суп</h3></div>
+<div class="card"><img src="https://picatom.com/uploads/posts/2024-01/wonderful-fried-dumplings.webp"><h3>Пельмени</h3></div>
+<div class="card"><img src="https://vrntimes.ru/userfiles/picmedia/image-1774944121_0476.jpeg.webp"><h3>Шашлык</h3></div>
+<div class="card"><img src="https://samsa.by/d/img_9772.jpg"><h3>Плов</h3></div>
+
+<!-- НАПИТКИ -->
+<div class="card"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"><h3>Капучино</h3></div>
+<div class="card"><img src="https://i.actualno.com/actualno_2013/upload/2023/12/19/0773970001703014518_big.webp"><h3>Чай</h3></div>
+<div class="card"><img src="https://s0.rbk.ru/v6_top_pics/media/img/6/59/346820747286596.jpg"><h3>Лимонад</h3></div>
+<div class="card"><img src="https://i.artfile.ru/2000x1121_1668497_[www.ArtFile.ru].jpg"><h3>Сок</h3></div>
+<div class="card"><img src="http://cdn1.ozone.ru/s3/multimedia-j/6002875231.jpg"><h3>Коктейли</h3></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348"><h3>Кофе</h3></div>
+<div class="card"><img src="https://specialtycoffee.id/wp-content/uploads/2025/05/Rich-Espresso-Shot.png"><h3>Эспрессо</h3></div>
+<div class="card"><img src="https://img.freepik.com/premium-photo/water-splashing-from-glass-isolated-on-white-background-clipping-path_317655-775.jpg"><h3>Минеральная вода</h3></div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="about">
+    <h2>О нас</h2>
+    <p>
+        Добро пожаловать в <b>Golden Taste</b> — место, где каждая деталь создана для вашего удовольствия.
+        Мы не просто готовим еду — мы создаем эмоции. 🍽✨
+        <br><br>
+        Уютная атмосфера, авторские блюда и свежайшие ингредиенты делают каждый визит особенным.
+        Здесь встречаются друзья, проходят важные моменты и рождаются новые впечатления.
+        <br><br>
+        Наши повара вкладывают душу в каждое блюдо, чтобы вы захотели возвращаться снова и снова.
+    </p>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Контакты</h2>
+<div class="contact">
+    <p> Бишкек</p>
+    <p> +996 700 123 456</p>
+    <p> goldentaste@mail.com</p>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Golden Taste</p>
+</footer>
+
+<script>
+function openModal() {
+    document.getElementById("modal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    let modal = document.getElementById("modal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
